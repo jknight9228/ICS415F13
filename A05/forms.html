@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="a05.css">
+
+<title>James Knight's Website</title>
+
+</head>
+
+<!-- For some odd reason, I was unable to get my CSS file to affect my nav bar, so placing it inline. -->
+<style type="text/css">
+	a:link {color:yellow;}      /* unvisited link */
+	a:visited {color:#00FF00;}  /* visited link */
+	a:hover {color:#FF00FF;}  /* mouse over link */
+	a:active {color:#0000FF;}  /* selected link */ 
+</style>
+
+<html>
+<div id="container">
+	<body>
+		<table border="1">
+		<header> <!-- HTML 5 element -->
+		<tr>
+		<td colspan=2>
+		<div id="h1" id="header">
+				<h1>James Knight's Website</h1>
+		</div>
+		</td>
+		</tr>
+		</header> <!-- HTML 5 element -->
+		</div>
+		
+	<tr>
+	<td colspan="2">
+	<nav><a href="home.html">Home</a> | <a href="forms.html">Forms</a> | </nav> 
+	</td>
+	</tr>
+
+	<aside> <!-- HTML 5 element -->
+		<tr>
+		<td valign="top">
+			<div id="h1">
+				<h1>Summary Window</h1>
+			</div>
+			
+		<div id="p">
+			<p>
+			This page demonstrates use of CSS to style the site.<br>
+			<br />
+			CSS is sourced from an external file, a04.css.<br>
+			<br>
+			It is located in the same directory as other files.<br>
+			<br>
+			Unlike A04, the sections of the webpage are using HTML semantics<br>
+			 to define the respective areas, for example, header, footers, and this<br> 
+			 portion is "aside."<br>
+			</p>
+		</td>
+	</aside> <!-- HTML 5 element -->
+
+
+	<td valign="top">
+	<div id="h1">
+		<h1>Forms Page</h1>
+	</div>
+	<section> <!-- HTML 5 element -->
+		<p>
+		  <form id="forms">
+		  <div id="p"><p>All fields must be entered before submitting. Error messages will be shown if username or password are not properly filled.
+			 This form is done completely with HTML5.
+		  <label>Username:</label><br>
+		  <input type="username" id="username" name="username" placeholder="example: superman123" required><br>
+		  <br>
+		  <label>Password:</label><br>
+		  <input type="password" id="password" name="password" required><br>
+		  
+		  <label>Email address:</label><br>
+		  <input type="email" id="email_addr" name="email_addr" required>
+		  
+		  <label>Select your favorite color:</label><br>
+		  <input type="color" name="favcolor">
+		  
+		  <label>Birthday:</label><br> 
+		  <input type="date" name="bday">
+		
+		  <label>Birthday (date and time):</label><br>
+		  <input type="datetime" name="bdaytime">
+		  
+		  <label>Birthday (month and year):</label><br> 
+		  <input type="month" name="bdaymonth">
+		  
+		  <label>Quantity (between 1 and 5):</label><br> 
+		  <input type="number" name="quantity" min="1" max="5">
+		  
+		  <label>Enter number ranging from 1 to 10</label><br>
+		  <input type="range" name="points" min="1" max="10">
+		  
+		  <label>Search Google:</label><br> 
+		  <input type="search" name="googlesearch">
+		  
+		  <label>Add your homepage:</label><br> 
+		  <input type="url" name="homepage">
+		  
+		  <label>Radio Buttons (Which do you like more?)</label><br>
+		  Bacon<input type="radio" name="bacon" value="Bacon">
+		  Sausage<input type="radio" name="sausage" value="Sausage">
+		  
+		  <br>
+		  <label>Checkboxes: (How do you get to school?)</label><br>
+		  Car<input type="checkbox" id_name="transport" value="Car"><br />
+		  Bike<input type="checkbox" name="transport" value="Bike"><br />
+		  Bus<input type="checkbox" name="transport" value="Bus"><br />
+		  
+		  <br></div></p>
+		  <input type="submit" value="Submit!" /> 
+		</form>
+		</p>
+	</section> <!-- HTML 5 element -->
+	<tr>
+	<td align="center" colspan="2">
+		<footer>Copyright (C) James Knight</footer> <!-- HTML 5 element -->
+	</td>
+	</tr>
+</div>
+</table>
+</body>
+</html>
