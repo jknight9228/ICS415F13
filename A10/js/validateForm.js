@@ -30,7 +30,7 @@ function validateForm()
 	}
 	
 	
-	if(error == 1)
+	if (error == 1)
 	{
 		return false;
 	}
