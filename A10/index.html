@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<title>James Knight's A10 (ICS 415)</title>
+<link href="css/a10.css" rel="stylesheet" type="text/css">
+<script src = "js/validateForm.js"></script>
+</head>
+
+
+<body>
+<h1>James Knight's A10 Form Page</h1>
+<h2>This page shows demonstrate of form validation using Javascript. <br>
+The page will print errors just below this heading.</h2>
+
+<form onsubmit="return validateForm();" method=post action="index.html">
+
+<div class=error id=nameError>Required: Please enter your name<br></div><br>
+<div class=error id=emailError>Required: Please enter your email address<br></div><br>
+<div class=error id=passwordError>Required: Please enter your password<br></div><br>
+<div class=error id=confirmError>Passwords don't match<br></div><br>
+
+<span class=label>Name:   </span><input type=text value="" id=name><br>
+<br>
+<span class=label>Email:   </span><input type=text value="" id=email><br>
+<br>
+<span class=label>Password:   </span><input type=text value="" id=password></textarea><br>
+<br>
+<span class=label>Confirm Password:   </span><input type=text value="" id=confirm><br>
+<br>
+<input type=submit value=Submit>
+</form>
+</body>
+</html>
