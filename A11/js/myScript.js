@@ -5,11 +5,9 @@
  */
 
 
-$(document).ready(function () {
-
-		$('.faqs dd').hide();
-		$('.faqs dt').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){ 
-		$(this).next().slideToggle('normal'); 
-		}); 
-	
+$(document).ready(function() {
+	$("li").click(function(){
+		$(this).toggleClass("active");
+		$(this).next("div").stop('true','true').slideToggle("slow");
+	});
 });

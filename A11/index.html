@@ -2,55 +2,48 @@
 <head>
 <title>James Knight's A11 (ICS 415)</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 <script type="text/javascript" src="js/myScript.js"></script>
       
-<style type="text/css">
-  body
-  {
-  	font-size:1.2em;
-  	color:black
-  }
-  .container
-  {
-  	margin:30px;
-  	border:1px solid black;
-  	background:cyan;
-  	padding:30px 30px 0 30px
-  }
+<style>
 
-  .faqs{
-  	padding-top:20px
-  }
-  .faqs dt
-  {
-  	font-weight:bold;
-  }
-  .faqs dt:hover
-  {
-  	cursor:pointer
-  }
-</style>      
+	li{list-style-type:none; cursor:pointer;}
+	ul div{color: red; cursor: auto; display: none; padding: 5px 0 5px 20px; }
+	li div:hover{text-decoration:none !important;}
+	li:before {content: "+"; padding:10px 10px 10px 0; font-weight:bold;}
+	li.active:before {content: "-"; padding:10px 10px 10px 0; font-weight:bold;}
+
+</style>     
 </head>
 <body>
 
 <h1>James Knight's A11 FAQ Page</h1>
 
 <hr>
-<div class="container">
-<dl class="faqs">
-	<dt>Why does Laulima suck and yet we still use it?</dt>
-		<dd>There are so many answers to this.</dd>
-		<br>
-	<dt>Why does MyUH always lag or throw errors in the beginning of the semester?</dt>
-		<dd>The UH system is a "world-class" institution that has aging server hardware and software.</dd>
-		<br>
-	<dt>Third question.. Ran out of ideas to put here.</dt>
-		<dd>In my case, as a computer scientist. Sometimes I lack creativity.</dd>
-		<br>		
-</dl>
+
+<div id="toggle">
+    <ul>
+        <li>Is Laulima is buggy as hell?</li>
+        <div>
+              Yes. There have been so many cases where Laulima would throw errors at me. It even messed up on me while taking my ICS 314 exam on campus.  
+        </div>
+        <li>What time is it?</li>
+            <div>
+                Take a look at your clock on the computer, silly.
+            </div>
+        <li>When should assignments for ICS 415 be due?</li>
+            <div>
+                I work from 7-5 typically, so moving the assignment due dates to later in the evening would be awesome for myself!
+            </div>         
+        <li>Does the stink tree by Sinclair need to be removed?</li>
+            <div>
+                Yes, depending on the time of year, it smells really bad.
+            </div>
+        <li>How can UH Manoa improve?</li>
+            <div>
+                Since this is only a FAQ and not research paper, simply stated: More professors, better evaluation of tenure professors, and facility improvement!
+            </div>
+         
+    </ul>
 </div>
-
-
 </body>
 </html>
