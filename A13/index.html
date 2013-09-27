@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<head>
+<title>James Knight's A13 (ICS415)</title>
+</head>
+<body>
+
+<h1>James Knight's A13</h1>
+<h3>This page shows use of a PHP form. Comments are stored in comments.txt. Any changes will be shown below.<h3>
+<h5>The comments are separated by spaces for brevity but in the comments.txt file, they are stored on new lines.</h5>
+
+<?php
+
+$my_file = 'comments.txt';
+$handle = fopen($my_file, 'r');
+$data = fread($handle, filesize($my_file));
+fclose($handle);
+echo "Comments currently stored:" . "<br/>";
+echo "---------------------------------" . "<br/>";
+echo $data;
+echo "<br/>";
+?>
+<br>
+<br>
+<hr>
+<form name="comment" method="post" action="php_support.php">
+Enter your Comment:<br>
+<textarea name="comment" cols="100" rows="10">
+
+</textarea>
+<br>
+<input type="submit" value="Submit">
+</form>
+<p>
+<a href="comments.txt"><b>Debugging:: VIEW<b></a>
+
+</body>
+</html>
+
