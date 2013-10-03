@@ -9,11 +9,25 @@ if (mysqli_connect_errno($con))
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$sql="INSERT INTO CommentData (Comment)
-VALUES
-('$_POST[comment]')";
+
+
+$sql = "CREATE TABLE IF NOT EXISTS CommentData 
+(
+PID INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(PID),
+Comment varchar(255)
+)";
+
+$insert = "INSERT INTO CommentData (Comment)
+VALUES ('$_POST[comment]')";
+  
 
 if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
+
+if (!mysqli_query($con,$insert))
   {
   die('Error: ' . mysqli_error($con));
   }
