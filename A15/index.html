@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<head>
+<title>James Knight's A15 (ICS415)</title>
+</head>
+<body>
+
+<h1>James Knight's A15</h1>
+
+<?php
+
+if(isset($_COOKIE['username']))
+{ 
+$last = $_COOKIE['username']; 
+echo "Welcome back to the site: ". $last; 
+echo "<br>";
+} 
+
+// Create connection
+$con=mysqli_connect("localhost","root", "", "ics415_a14");
+$select=mysql_select_db("CommentData");
+
+// Check connection
+if (mysqli_connect_errno($con))
+{
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$result = mysqli_query($con,"SELECT *
+							FROM Comments
+							");
+
+echo "<table border='1'>
+<tr>
+<th>Username</th>
+<th>Comment</th>
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+  {
+  echo "<tr>";
+  echo "<td>" . $row['username'] . "</td>";
+  echo "<td>" . $row['comment'] . "</td>";
+  echo "</tr>";
+  }
+echo "</table>";
+
+?> 
+
+<br>
+<hr>
+<form name="comment" method="post" action="php_support.php">
+Enter your Username:<br>
+<input type="text" name="username"><br>
+Enter your Comment:<br>
+<textarea name="comment" cols="100" rows="10">
+
+</textarea>
+<br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+<?php
+
+echo "<table border='1'>
+<tr>
+<th>Username</th>
+<th>Comment #</th>
+</tr>";
+  $result = mysqli_query($con,"SELECT DISTINCT username 
+  								FROM Comments");
+	$user_count = mysqli_num_rows($result);
+         while($row=mysqli_fetch_row($result))
+         {
+         	echo "<tr>";
+			echo "<td>" . $row[0] . "</td>";
+			echo "</tr>";
+		}
+		
+		echo "</table>";
+mysqli_close($con);
+?> 
