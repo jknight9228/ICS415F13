@@ -13,3 +13,10 @@ function validateLogin(){
 	 return true;
 	
 }
+
+function loadGamertag(){
+	
+	var frame    = document.getElementById("gtFrame");
+	frame.setAttribute("src", "http://www.serebii/net");
+	alert("Works!");
+}

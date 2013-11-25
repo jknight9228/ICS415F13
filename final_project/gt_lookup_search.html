@@ -69,7 +69,7 @@
 					 <section class="widget clearfix">
 						 <!-- Login -->
 						 <h4 class="widgettitle">Login</h4>
-						 <form class="form-group" name="login" action="test.php" onsubmit="return validateLogin()">
+						 <form class="form-group" name="login" action="test.php" onsubmit="return validateLogin()" method="post">
 							 Username: <input type="text" class="form-control" name="uname" placeholder="Name"></br>
 							 Password: <input type="password" class="form-control" name="pword" placeholder="Password">
 							 <input type="submit" value="Submit">
@@ -87,7 +87,19 @@
 						 <header>
 							<h1 id="content-title">Xbox Live Gamertag Lookup</h1>	
 						 </header>
-						 <iframe id="gtFrame" width="800" height="1200" src="gt_lookup.php">
+						 <!-- Search -->
+						 <form name="serachgt" role="search" action="setGT.php" onsubmit="" method="post">
+							<div class="input-group input-group-lg">
+								<input type="text" class="form-control" name="gt" placeholder="Search for a Gamertag! Press enter when ready" autofocus="autofocus">
+								<span class="input-group-btn">
+									<input type="submit" class="btn btn-default" value="Search">
+								</span>
+							</div>
+						</form>
+						 
+						 
+						 <iframe name="iFrameGT" id="gtFrame" width="800" height="1200" src="gt_lookup.php" 
+								 marginwidth="1" marginheight="1" frameborder="0" vspace="1" hspace="1">
 								<p>If you see this, your browser doesn't support frames.</p>
 						 </iframe>
 						 

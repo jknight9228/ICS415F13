@@ -1,7 +1,12 @@
 <?php
 
-	// Vars
-	$gamertag = 'jedhi%20knight';
+	//Check if the user has already performed a search
+	if(isset($_COOKIE['gamertag'])){
+		$gamertag = $_COOKIE['gt'];
+	}else{
+		$gamertag = 'jedhi%20knight';
+	}
+	
 
   /* 
     Would be better to use cURL, but for briefness of code, using file_get_contents
