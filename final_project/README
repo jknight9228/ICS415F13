@@ -1,0 +1,18 @@
+ICS 415 Final Project - Xbox Gamertag Lookup
+By: James Knight & Marek Lopez
+--------------------------------
+
+
+In order to install using XAMPP,
+
+Create a database called "login" with phpymadmin.
+
+Import the users.sql file located in the _install directory.
+
+Change /config/db.php to match your database user information.
+
+Requirements:
+Apache
+PHP 5.3.7
+MySQL 5
+
