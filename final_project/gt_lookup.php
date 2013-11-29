@@ -1,21 +1,20 @@
 <?php
-	
+
+	error_reporting(0);
 	//Check if the user has already performed a search
 	if(isset($_POST['gamertag'])){
 		$gamertag = urlencode($_POST['gamertag']);
 	}else{
 		$gamertag = 'shiningXfinger';
 	}
-	
-
-  /* 
-    Would be better to use cURL, but for briefness of code, using file_get_contents
-  */
 
 	// Get profile information
 	$profile = json_decode(file_get_contents('http://www.xboxleaders.com/api/profile.json?gamertag='.$gamertag));
-  $profile = $profile->Data;
-  
+	$profile = $profile->Data;
+	if($profile == NULL){
+		echo "Sorry, no matches were returned";
+		echo "</br> <a href='gt_lookup.php'>Back to search</a>";
+	}else{
 	// Get game information
 	$games = json_decode(file_get_contents('http://www.xboxleaders.com/api/games.json?gamertag='.$gamertag));
 	$games = $games->Data;
@@ -144,7 +143,9 @@
        <li><a href="<?php echo $game->Url; ?>" target="_blank"><img src="<?php echo $game->BoxArt; ?>" alt="<?php echo $game->Title; ?>" /></a><br /><?php echo $game->Title; ?></li> 
     <?php endforeach; ?>
   </ul>
-  <?php endif; ?>
+  <?php endif; 
+  }
+  ?>
   
   <div class="clear"></div>
 </div>
