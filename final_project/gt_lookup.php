@@ -1,10 +1,10 @@
 <?php
-
+	
 	//Check if the user has already performed a search
-	if(isset($_COOKIE['gamertag'])){
-		$gamertag = $_COOKIE['gt'];
+	if(isset($_POST['gamertag'])){
+		$gamertag = urlencode($_POST['gamertag']);
 	}else{
-		$gamertag = 'jedhi%20knight';
+		$gamertag = 'shiningXfinger';
 	}
 	
 
@@ -24,7 +24,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
 <style>
   
   .gamercard {
@@ -108,6 +110,12 @@
 </head>
 <body>
 
+	<!-- Search -->
+	<form name="gtSearch"  class="form-group" role="form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+		<input type="text" class="form-control" role="search" name="gamertag" placeholder="Enter a gamertag here" autofocus="autofocus">
+		<button type="submit" class="btn btn-default"> Search </button>
+	</form>
+
 	<!-- gamercard -->
 <div class="gamercard">
   
@@ -133,7 +141,7 @@
   <h2>Recent Games</h2>
   <ul class="games">
     <?php foreach($games->PlayedGames as $game): ?>
-       <li><a href="<?php echo $game->Url; ?>"><img src="<?php echo $game->BoxArt; ?>" alt="<?php echo $game->Title; ?>" /></a><br /><?php echo $game->Title; ?></li> 
+       <li><a href="<?php echo $game->Url; ?>" target="_blank"><img src="<?php echo $game->BoxArt; ?>" alt="<?php echo $game->Title; ?>" /></a><br /><?php echo $game->Title; ?></li> 
     <?php endforeach; ?>
   </ul>
   <?php endif; ?>
