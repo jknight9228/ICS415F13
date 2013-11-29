@@ -1,3 +1,5 @@
+<center><img src="xbox360logo.jpg"></center>
+<h1>Xbox Live Gamertag Lookup</h1>
 <p>
 As avid gamers, we decided to do a project that lines up with our interests. <br>
 We are grabbing player's data from official Xbox servers and are displaying 
@@ -5,6 +7,137 @@ here in a easy to use search function.<br>
 <br>
 With use of JSON, we are able to grab all the data we need. Below is a sample of the data sent
 back with use of XboxLeader's API.<br>
+<br>
+<center>
+<form method="post" action="">
+<textarea name="comments" cols="100" rows="15">
+{
+    "status": "success",
+    "version": "2.0",
+    "data": {
+        "gamertag": "Major Nelson",
+        "tier": "gold",
+        "badges": {
+            "xboxlaunchteam": true,
+            "nxelaunchteam": true,
+            "kinectlaunchteam": true
+        },
+        "avatar": {
+            "full": "http:\/\/avatar.xboxlive.com\/avatar\/Major Nelson\/avatar-body.png",
+            "small": "http:\/\/avatar.xboxlive.com\/avatar\/Major Nelson\/avatarpic-s.png",
+            "large": "http:\/\/avatar.xboxlive.com\/avatar\/Major Nelson\/avatarpic-l.png"
+        },
+        "gamerscore": 63857,
+        "reputation": 20,
+        "presence": "Last seen 6\/8\/2013 playing Halo 4",
+        "online": false,
+        "motto": "",
+        "name": "",
+        "location": "",
+        "biography": "",
+        "recentactivity": [
+            {
+                "id": 1297287449,
+                "isapp": false,
+                "title": "Halo 4",
+                "artwork": {
+                    "small": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d8024d530919\/1033\/boxartsm.jpg",
+                    "large": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d8024d530919\/1033\/boxartlg.jpg"
+                },
+                "gamerscore": {
+                    "current": 805,
+                    "total": 1750
+                },
+                "achievements": {
+                    "current": 42,
+                    "total": 76
+                },
+                "progress": 55.3,
+                "lastplayed": "1370662878"
+            },
+            {
+                "id": 1480659432,
+                "isapp": false,
+                "title": "State of Decay",
+                "artwork": {
+                    "small": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d802584111e8\/1033\/boxartsm.jpg",
+                    "large": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d802584111e8\/1033\/boxartlg.jpg"
+                },
+                "gamerscore": {
+                    "current": 45,
+                    "total": 400
+                },
+                "achievements": {
+                    "current": 5,
+                    "total": 30
+                },
+                "progress": 16.7,
+                "lastplayed": "1370490565"
+            },
+            {
+                "id": 1480659903,
+                "isapp": false,
+                "title": "Far Cry 3 Blood Dragon",
+                "artwork": {
+                    "small": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d802584113bf\/1033\/boxartsm.jpg",
+                    "large": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d802584113bf\/1033\/boxartlg.jpg"
+                },
+                "gamerscore": {
+                    "current": 80,
+                    "total": 400
+                },
+                "achievements": {
+                    "current": 4,
+                    "total": 19
+                },
+                "progress": 21.1,
+                "lastplayed": "1369710466"
+            },
+            {
+                "id": 1480659607,
+                "isapp": false,
+                "title": "Monaco",
+                "artwork": {
+                    "small": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d80258411297\/1033\/boxartsm.jpg",
+                    "large": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d80258411297\/1033\/boxartlg.jpg"
+                },
+                "gamerscore": {
+                    "current": 20,
+                    "total": 400
+                },
+                "achievements": {
+                    "current": 1,
+                    "total": 12
+                },
+                "progress": 8.3,
+                "lastplayed": "1369018753"
+            },
+            {
+                "id": 1464993833,
+                "isapp": false,
+                "title": "Injustice",
+                "artwork": {
+                    "small": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d80257520829\/1033\/boxartsm.jpg",
+                    "large": "http:\/\/download.xbox.com\/content\/images\/66acd000-77fe-1000-9115-d80257520829\/1033\/boxartlg.jpg"
+                },
+                "gamerscore": {
+                    "current": 0,
+                    "total": 1000
+                },
+                "achievements": {
+                    "current": 0,
+                    "total": 50
+                },
+                "progress": 0,
+                "lastplayed": "1368386056"
+            }
+        ],
+        "freshness": "new"
+    },
+    "runtime": 1.384
+}
+</textarea><br>
+</form></center>
 <br>
 For those of you familiar, it will return items like profile name, achievement score, and games recently played.
 </p>

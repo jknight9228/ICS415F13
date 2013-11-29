@@ -14,9 +14,21 @@ function validateLogin(){
 	
 }
 
-function loadGamertag(){
-	
-	var frame    = document.getElementById("gtFrame");
-	frame.setAttribute("src", "http://www.serebii/net");
-	alert("Works!");
+function changeHeader(link){
+	var header = document.getElementById("content-title");
+	if(link == "1"){
+		header.innerHTML = "Main";
+	}else if(link == "2"){
+		header.innerHTML = "Xbox Live Gamertag Lookup";
+	}else if(link == "3"){
+		header.innerHTML = "About this site";
+	}
+}
+
+function adjustIframe() {
+    var iFrameID = document.getElementById('contentFrame');
+    if(iFrameID) {
+        iFrameID.height = "";
+        iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+    }   
 }
