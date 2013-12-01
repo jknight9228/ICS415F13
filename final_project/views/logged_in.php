@@ -57,6 +57,7 @@
 			 <ul class="nav navbar-nav">
 				 <li class="active"><a href="landing.html" target="iFrameContent" onclick="changeHeader(1)">Home</a></li>
 				 <li class="active"><a href="gt_lookup.php" target="iFrameContent" onclick="changeHeader(2)">XBOX Live Gamertag Lookup </a></li>
+				 <li class="active"><a href="recentsearch.php" target="iFrameContent" onclick="changeHeader(2)">Recent Searches </a></li>
 				 <li class="active"><a href="about.html" target="iFrameContent" onclick="changeHeader(3)">About</a></li>
 			 </ul>
 			 <span class="nav navbar-right" id="time">

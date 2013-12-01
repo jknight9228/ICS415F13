@@ -1,13 +1,40 @@
 <?php
+// Create connection
+$con=mysqli_connect("localhost","root", "", "login");
+$select=mysql_select_db("search");
 
-	error_reporting(0);
-	//Check if the user has already performed a search
-	if(isset($_POST['gamertag'])){
-		$gamertag = urlencode($_POST['gamertag']);
-	}else{
-		$gamertag = 'shiningXfinger';
-	}
+error_reporting(0);
+//Check if the user has already performed a search
+if(isset($_POST['gamertag'])){
+	$gamertag = urlencode($_POST['gamertag']);
+}else{
+	$gamertag = 'shiningXfinger';
+}
 
+// Check connection
+if (mysqli_connect_errno($con))
+{
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$gtag = mysqli_escape_string($con, $_POST['gamertag']);
+
+
+$sql =
+"CREATE TABLE IF NOT EXISTS search
+(
+PID INT NOT NULL AUTO_INCREMENT,
+gtag varchar(100) not null,
+primary key(pid)
+)";
+
+if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
+
+
+	
 	// Get profile information
 	$profile = json_decode(file_get_contents('http://www.xboxleaders.com/api/profile.json?gamertag='.$gamertag));
 	$profile = $profile->Data;
@@ -18,7 +45,11 @@
 	// Get game information
 	$games = json_decode(file_get_contents('http://www.xboxleaders.com/api/games.json?gamertag='.$gamertag));
 	$games = $games->Data;
-	
+	$insert = "INSERT INTO Search (gtag) VALUES ('$gtag')";
+	if ($result = mysqli_query($con, $insert))
+	{
+	}
+mysqli_close($con);
 ?>
 <!DOCTYPE html>
 <html>
